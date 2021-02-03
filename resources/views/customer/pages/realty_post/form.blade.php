@@ -142,7 +142,6 @@
                     @enderror
                 </div>
                 <div class="col-md-4 mb-3 mb-md-0">
-                    <label class="control-label">Phòng ngủ</label>
                     <div class="form-group">
                         <label class="control-label">Số phòng ngủ</label>
                         <input type="number" name="number_of_bed_rooms" id="" class="form-control" placeholder="Phòng ngủ" aria-describedby="" value="{{$realty->number_of_bed_rooms ?? old('number_of_bed_rooms')}}">
