@@ -66,6 +66,11 @@
                 flex: 0 0 20%;
             }
         }
+        .select2-container--default
+            .select2-selection--single
+            .select2-selection__rendered {
+            padding-left: 30px;
+        }
     }
 }
 

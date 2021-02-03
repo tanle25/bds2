@@ -67,7 +67,7 @@
                 <div class="search-field p-2 ">
                     <div class="pt-2">
                         <div class="search-field-header bg-white d-md-flex align-items-center mx-2">
-                            <div class="d-md-flex search-input align-items-center" style="flex: 0 0 calc(20%)">
+                            <div class="d-md-flex search-criteria  search-input  align-items-center" style="flex: 0 0 calc(20%)">
                                 <i class="fal fa-car-building"></i>
                                 <select class="realty-type form-control border-0 select2 border-0" name="loai-bds">
                                     <option data-realty-post-type="1" value="">Loại nhà đất</option>
@@ -203,15 +203,13 @@
                 $(this).removeClass('closed');
                 $(this).addClass('opened');
                 $(this).html(`
-                    <i class="fas fa-compress-arrows-alt"></i>Ẩn
+                <i class="far fa-chevron-up"></i> Ẩn
                 `);
-            }
-
-            if ($(this).hasClass('opened')) {
+            }else if ($(this).hasClass('opened')) {
                 $(this).removeClass('opened');
                 $(this).addClass('closed');
                 $(this).html(`
-                    <i class="fas fa-expand-arrows-alt"></i>Thêm
+                <i class="far fa-chevron-down"></i> Thêm
                 `);
             }
 
