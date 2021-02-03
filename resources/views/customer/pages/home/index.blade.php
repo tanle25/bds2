@@ -2,8 +2,8 @@
 
 @section('preset_seo')
     @php
-        $custom_title = 'Trang chủ bất động sản Tây Ninh';
-        $custom_description = 'Trang chủ bất động sản Tây Ninh';
+        $custom_title = 'Trang chủ bất động sản ' . config('constant.province_name');
+        $custom_description = 'Trang chủ bất động sản ' . config('constant.province_name');
     @endphp
 @endsection
 

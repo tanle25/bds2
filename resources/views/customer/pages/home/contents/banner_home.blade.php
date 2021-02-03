@@ -36,9 +36,8 @@
     @endif
 
 	<div class="container search-home clearfix pt-md-5 ">
-		<div class="divtext text-center  d-none d-md-block">
-			<h2><strong> BẤT ĐỘNG SẢN TÂY NINH</strong></h2>
-			<p>Tìm kiếm bất động sản chỉ với một cú click chuột</p>
+		<div class="divtext text-center d-none d-md-block">
+			<h2><strong class="text-uppercase text-white"> BẤT ĐỘNG SẢN {{config('constant.province_name')}}</strong></h2>
 		</div>
 		<div class="section-filter-home d-none d-md-block">
             <form action="" id="form-search">
