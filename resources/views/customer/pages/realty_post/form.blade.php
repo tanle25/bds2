@@ -133,7 +133,7 @@
                 </div>
 
                 <div class="col-md-4 has-errors mb-3 mb-md-0">
-                    <label class="control-label">Phòng tắm</label>
+                    <label class="control-label">Số phòng tắm</label>
                     <input id="number_of_bath_rooms" type="number" name="number_of_bath_rooms" class="form-control" placeholder="Phòng tắm" value="{{$realty->number_of_bath_rooms ?? old('number_of_bath_rooms')}}" >
                     @error('number_of_floors')
                     <div class="text-danger">
@@ -144,7 +144,8 @@
                 <div class="col-md-4 mb-3 mb-md-0">
                     <label class="control-label">Phòng ngủ</label>
                     <div class="form-group">
-                      <input type="number" name="number_of_bed_rooms" id="" class="form-control" placeholder="Phòng ngủ" aria-describedby="" value="{{$realty->number_of_bed_rooms ?? old('number_of_bed_rooms')}}">
+                        <label class="control-label">Số phòng ngủ</label>
+                        <input type="number" name="number_of_bed_rooms" id="" class="form-control" placeholder="Phòng ngủ" aria-describedby="" value="{{$realty->number_of_bed_rooms ?? old('number_of_bed_rooms')}}">
                     </div>
                     @error('number_of_bed_rooms')
                     <div class="text-danger">
@@ -162,7 +163,6 @@
             <div class="row">
                 <div class="col-md-6 col-sm-4 price-fav mb-3 mb-md-0">
                     <label class="control-label">Giá đề nghị <span class="text-danger">*</span></label>
-
                     <input id="price" type="number" name="price" class="form-control" placeholder="Giá đề nghị" value="{{$realty_post->price ?? old('price')}}" onkeyup="onChangeInput(event);">
                     @error('price')
                     <div class="text-danger">
@@ -174,8 +174,7 @@
                 <div class="col-sm-6 col-rate mb-3 mb-md-0">
                     <div class="row">
                         <div class="">
-                            <label class="control-label"> Đơn vị <span class="text-danger">*</span></label>
-
+                            <label class="control-label">Đơn vị <span class="text-danger">*</span></label>
                             <select class="form-control" id="price_type" name="price_type">
                                 @foreach (config('constant.price_type') as $index => $item)
                                     <option
