@@ -19,14 +19,14 @@ Liên hệ admin
                     <div class="col-12 col-lg-6">
                         <div class="form-group">
                             <input
-                            name="contact_name"
+                            name="fullname"
                             type="text"
-                            class="form-control border-0 p-3 @error('contact_name') is-invalid @enderror"
-                            id="contact_name"
+                            class="form-control border-0 p-3 @error('fullname') is-invalid @enderror"
+                            id="fullname"
                             placeholder="Nhập Tên khách hàng"
-                            value="{{old('contact_name')}}"
+                            value="{{old('fullname')}}"
                             >
-                            @error('contact_name')
+                            @error('fullname')
                             <div id="" class="error invalid-feedback d-block">
                                 {{$message}}
                             </div>
@@ -34,14 +34,14 @@ Liên hệ admin
                         </div>
                         <div class="form-group">
                             <input
-                            name="contact_email"
+                            name="email"
                             type="text"
-                            class="form-control border-0 p-3  @error('contact_email') is-invalid @enderror"
-                            id="contact_email"
-                            placeholder="contact_Email"
-                            value="{{old('contact_email')}}"
+                            class="form-control border-0 p-3  @error('email') is-invalid @enderror"
+                            id="email"
+                            placeholder="Email"
+                            value="{{old('email')}}"
                             >
-                            @error('contact_email')
+                            @error('email')
                             <div id="" class="error invalid-feedback d-block ">
                                 {{$message}}
                             </div>
@@ -49,14 +49,14 @@ Liên hệ admin
                         </div>
                         <div class="form-group">
                             <input
-                            name="contact_phone"
+                            name="phone_number"
                             type="text"
-                            class="form-control border-0 p-3  @error('contact_phone') is-invalid @enderror"
-                            id="contact_phone"
+                            class="form-control border-0 p-3  @error('phone_number') is-invalid @enderror"
+                            id="phone_number"
                             placeholder="Số điện thoại"
-                            value="{{old('contact_phone')}}"
+                            value="{{old('phone_number')}}"
                             >
-                            @error('contact_phone')
+                            @error('phone_number')
                             <div id="" class="error invalid-feedback d-block">
                                 {{$message}}
                             </div>
@@ -80,8 +80,8 @@ Liên hệ admin
                     </div>
                     <div class="col-12 col-lg-6 h-100">
                         <div class="form-group">
-                            <textarea name="contact_message" class="form-control @error('contact_message') is-invalid @enderror d-block" placeholder="Nhập yêu cầu" style="height: 271px">{{old('contact_message')}}</textarea>
-                            @error('contact_message')
+                            <textarea name="messages" class="form-control @error('messages') is-invalid @enderror d-block" placeholder="Nhập yêu cầu" style="height: 271px">{{$class->messages ?? old('messages')}}</textarea>
+                            @error('messages')
                             <div id="" class="error invalid-feedback d-block">
                                     {{$message}}
                             </div>

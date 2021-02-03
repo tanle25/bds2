@@ -2,8 +2,8 @@
 
 @section('preset_seo')
     @php
-        $custom_title = 'Trang chủ bất động sản Thanh Hóa';
-        $custom_description = 'Trang chủ bất động sản Thanh Hóa';
+        $custom_title = 'Trang chủ bất động sản Tây Ninh';
+        $custom_description = 'Trang chủ bất động sản Tây Ninh';
     @endphp
 @endsection
 
@@ -17,17 +17,15 @@ Trang chủ
 
  @section('content')
     @include('customer.pages.home.contents.banner_home')
-    @include('customer.pages.home.contents.home_posts_v3')
+    @include('customer.pages.home.contents.list_bds_hot')
+    @include('customer.pages.home.contents.home_post_v2')
     @include('customer.pages.home.contents.hot_realty')
-    {{-- @include('customer.pages.home.contents.why_choose_us') --}}
-    @include('customer.pages.home.contents.realty_by_address')
     @if($home_projects->isNotEmpty())
-    @include('customer.pages.home.contents.home_project_v3')
+        @include('customer.pages.home.contents.home_project_v2')
     @endif
-
     <section class="container">
-        <div class="d-flex my-5">
-            <h2 class="font-18 home-title color-dark text-center mx-auto">Doanh nghiệp nổi bật</h2>
+        <div class="d-flex">
+            <h3 class="font-18 font-weight-600 home-title color-dark">Doanh nghiệp nổi bật</h3>
         </div>
         <div class="owl-carousel partner-slider mb-5">
             @foreach ($partners as $partner)
@@ -37,10 +35,11 @@ Trang chủ
                     </div>
                 </div>
             @endforeach
-            </div>
         </div>
     </section>
-    @include('customer.pages.home.contents.contact')
+    @isset($horizontal_advertisments)
+        @include('customer.components.advertisments.horizontal', ['items' => $horizontal_advertisments, 'items_mobile' => $mobile_horizontal_advertisments])
+    @endisset
 @endsection
 
 @section('script')

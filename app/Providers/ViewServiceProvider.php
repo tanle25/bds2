@@ -77,11 +77,11 @@ class ViewServiceProvider extends ServiceProvider
 
             View::composer(
                 'customer.partials.footer', function ($view) {
-                    $menu_category = MenuCategory::with(['menus', 'menus.childs'])->where('name', 'footer_v3')->first();
+                    $menu_category = MenuCategory::with(['menus', 'menus.childs'])->where('name', 'footer_menu')->first();
                     if ($menu_category) {
-                        $view->with('footer_v3', $menu_category->menus->where('parent_id', null)->sortBy('sort') ?? []);
+                        $view->with('footer_menu', $menu_category->menus->where('parent_id', null)->sortBy('sort') ?? []);
                     } else {
-                        $view->with('footer_v3', []);
+                        $view->with('footer_menu', []);
                     }
                 }
             );
@@ -95,8 +95,6 @@ class ViewServiceProvider extends ServiceProvider
                     $featured_tags = Tag::all();
                     if ($featured_tags->count() >= 6) {
                         $featured_tags = $featured_tags->random(6);
-                    } else {
-                        $featured_tags = [];
                     }
 
                     $view->with(['featured_tags' => $featured_tags, 'featured_posts' => $featured_posts, 'featured_districts' => $featured_districts]);
