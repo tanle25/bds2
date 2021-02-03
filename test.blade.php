@@ -24,9 +24,9 @@
         }
     </style>
 @endsection
-<section class="banner-home">
+<section class="banner-home position-relative d-flex align-items-center" >
     @if (Agent::isMobile())
-    <div class="banner-home-slider owl-carousel" style="z-index: 1">
+        <div class="banner-home-slider owl-carousel" style="z-index: 1">
             @foreach ($banner_mobile as $item)
                 @if ($item)
                     <div class="item img-responsive">
@@ -36,21 +36,25 @@
             @endforeach
         </div>
     @else
-        <div class="banner-home-slider owl-carousel" style="z-index: -1">
+        <div class="banner-home-slider owl-carousel position-absolute h-100" style="z-index: 2">
             @foreach ($banners as $item)
                 @if ($item)
-                    <div class="item embed-responsive embed-responsive-19by4 w-100 banner-item">
-                        <img data-src="{{$item}}" class="lazy embed-responsive-item" alt="" style="height: 100%; object-fit:cover" srcset="">
+                    <div class="item w-100 banner-item">
+                        <img data-src="{{$item}}" class="lazy" alt="" style="height: 100%; object-fit:cover" srcset="">
                     </div>
                 @endif
             @endforeach
         </div>
     @endif
 
-	<div class="container mx-auto px-0" style="margin-top: -72px">
+	<div class="container mx-auto clearfix pt-md-5 position-relative" style="z-index: 2">
+		<div class="divtext text-center  d-none d-md-block">
+			<h2><strong class="text-uppercase text-white"> BẤT ĐỘNG SẢN {{config('constant.province_name') ?? 'Thanh Hóa'}}</strong></h2>
+		</div>
 		<div class="section-filter-home d-none d-md-block">
             <form action="" id="form-search">
                 <div class="search-type d-flex">
+
                     <div class="search-type-item mr-1">
                         <input type="radio"  class="d-none" name="loai-tin-dang" value="1" id="realty-sell">
                         <label class="py-2 px-4 font-9 m-0 rounded-top" for="realty-sell"><strong>NHÀ ĐẤT BÁN</strong></label>
@@ -63,8 +67,7 @@
                 <div class="search-field p-2 ">
                     <div class="pt-2">
                         <div class="search-field-header bg-white d-md-flex align-items-center mx-2">
-                            <div class="search-input d-md-flex  align-items-center" style="flex: 0 0 calc(20%)">
-                                {{-- <i class="d-block fa fa-address-book" aria-hidden="true"></i> --}}
+                            <div class="d-md-flex search-input align-items-center" style="flex: 0 0 calc(20%)">
                                 <i class="fal fa-car-building"></i>
                                 <select class="realty-type form-control border-0 select2 border-0" name="loai-bds">
                                     <option data-realty-post-type="1" value="">Loại nhà đất</option>
@@ -76,11 +79,11 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="address-input search-input input-group">
+                            <div class="address-input search-input">
                                 <i class="far fa-search "></i>
-                                <input type="text" class="form-control pl-5 rounded-0" name="dia-chi" placeholder="Tìm kiếm bất động sản" >
+                                <input type="text" class="form-control pl-5 rounded-0" name="dia-chi" placeholder="Nhập địa chỉ" >
                             </div>
-                            <button style="width:" id="apply-search" type="button" style="flex: 0 0 calc(20%)" class="d-none d-md-block font-weight-500 text-light btn btn-warning rounded-0">Tìm kiếm</button>
+                            <button style="width:" id="apply-search" type="button" style="flex: 0 0 calc(20%)" class="d-none d-md-block  btn btn-info rounded-0">Tìm kiếm</button>
                         </div>
                     </div>
 
