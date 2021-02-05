@@ -55,6 +55,31 @@
             { },
             {'orderable': false},
         ],
-    });
+    language: {
+
+            "decimal":        "",
+            "emptyTable":     "Không có bài đăng nào!",
+            "info":           "Hiển thị _START_ từ _END_ của _TOTAL_ kết quả",
+            "infoEmpty":      "Hiển thị 0 từ 0 của 0 kết quả",
+            "infoFiltered":   "(Lọc từ _MAX_ kết quả)",
+            "infoPostFix":    "",
+            "thousands":      ",",
+            "lengthMenu":     "Hiển thị _MENU_ kết quả",
+            "loadingRecords": "Đang tải...",
+            "processing":     "Đang tải...",
+            "search":         "Tìm kiếm:",
+            "zeroRecords":    "Không tìm thấy kết quả phù hợp",
+            "paginate": {
+                "first":      "Trang đầu",
+                "last":       "Trang cuối",
+                "next":       "Trang kế",
+                "previous":   "Trang trước"
+            },
+            "aria": {
+                "sortAscending":  ": activate to sort column ascending",
+                "sortDescending": ": activate to sort column descending"
+            }
+        }
+});
 </script>
 @endsection
